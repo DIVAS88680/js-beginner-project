@@ -1,0 +1,23 @@
+ .empTable{
+     padding:5px;
+     margin: 10px 0px 10px;
+     text-align: center;
+     color:black;
+     width: 50%;
+     background-color: cadetblue;
+ }
+ .empTableHead .empTableRow{
+    font-style: bold;
+    color:brown;
+}
+.formed{
+    color: brown;
+    font-style: 400;
+}
+#btn{
+    color:black;
+    border-radius: 80%;;
+}
+#empTableBodyRow{
+    color: chartreuse;
+}

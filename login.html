@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div>
+           
+            <label for="email">Email:&emsp;&nbsp;</label>
+            <input type="text" name="email" id="email">
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="pass">
+
+        <div >
+            <input type="button" id="button" value="Submit">
+        </div>
+    </form>
+    <script>
+        function login(){
+            var email=document.getElementById('email').value;
+
+        var password=document.getElementById('pass').value;
+          console.log(email);
+          console.log(password);
+        }
+        var submit=document.getElementById('button');
+        submit.addEventListener('click',login);
+    </script>
+</body>
+</html>
