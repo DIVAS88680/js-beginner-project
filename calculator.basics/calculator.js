@@ -8,20 +8,54 @@ var operator=null;
 for(var i=0;i<buttonCalci.length;i++){
     buttonCalci[i].addEventListener('click', function(){
         var valueClicked = this.getAttribute('data-value');
-        displayCalci.innerText=valueClicked;
+        var text = display.textContent;
         
         if(valueClicked==='+'){
-            operator=valueClicked;
-            operand1=displayCalci.innerText;
-            console.log(operand1);
+            operator = valueClicked ;
+            operand1 = parseFloat(text);
+            display.textContent = "";
         }
-        else if (valueClicked === "=") {
-                  operand2 = displayCalci.innerText;
-                  var result =  `${operand1}${operator}${operand2}`
-                    displayCalci.innerText = result;
-                                }
-                                });
-                            }
+         else if(valueClicked==='-'){
+            operator = valueClicked ;
+            operand1 = parseFloat(text);
+            display.textContent = "";
+        }
+        else if(valueClicked==='/'){
+            operator = valueClicked ;
+            operand1 = parseFloat(text);
+            display.textContent = "";
+        }
+        else if(valueClicked==='*'){
+            operator = valueClicked ;
+            operand1 = parseFloat(text);
+            display.textContent = "";
+        }
+        else if (valueClicked == "ac") {
+            display.textContent = "";
+        }
+        else if (valueClicked == "%") {
+            operand1 = parseFloat(text);
+            operand1 = operand1 / 100;
+            display.textContent = operand1
+        }
+        else if (valueClicked == ".") {
+                display.textContent = text + '.';
+            }
+        else if (valueClicked == "=") {
+            operand2 = parseFloat(text);
+            var result = eval(operand1 + ' ' + operator + ' ' + operand2);
+            if (result) {
+                display.textContent = result;
+                operand1 = result;
+                operand2 = null;
+                operator = null;
+            }
+        } else {
+            display.textContent += valueClicked;
+        }
+    });
+}
+
         //console.log(valueClicked)
      //   values.push(valueClicked);
      //   displayCalci.innerText=values.join('');
